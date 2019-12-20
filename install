@@ -15,6 +15,8 @@ fi
 echo -e "\nInstalling django \n"
 if sudo pip install 'django<2.0' ; then
     echo -e "    Successfully installed django runtime \n"
+elif sudo pip3 install 'django<2.0' ; then
+    echo -e "    Successfully installed django runtime \n"
 else
     echo -e "    Failed to installed django."
     end
@@ -23,8 +25,10 @@ fi
 ###################################
 # python setup.py Emo #
 ###################################
-echo -e "\nInstalling django \n"
+echo -e "\nInstalling Emo \n"
 if sudo pip install SunFounder_Emo ; then
+    echo -e "    Successfully setup SunFounder_Emo \n"
+elif sudo pip3 install SunFounder_Emo ; then
     echo -e "    Successfully setup SunFounder_Emo \n"
 else
     echo -e "    Failed to setup SunFounder_Emo."
@@ -95,4 +99,13 @@ sudo update-rc.d dragit defaults
 
 echo -e "    Done \n"
 echo -e"  Reboot your pi to take effect or do it later"
-#sudo reboot
+echo -e "Do you want to reboot immediately? \c"
+if_continue
+if [ $? = 1 ]; then
+    echo -e "Rebooting..."
+    sudo reboot
+else
+    echo -e "Exiting..."
+    exit
+fi
+
