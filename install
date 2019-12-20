@@ -9,6 +9,18 @@ if [ "$(whoami)" != "root" ] ; then
     end
 fi
 
+#####
+echo -e "\nInstalling wiringpi \n"
+wget https://project-downloads.drogon.net/wiringpi-latest.deb
+if sudo dpkg -i wiringpi-latest.deb ; then
+     echo -e "    Successfully installed wiringpi runtime \n"
+else
+    echo -e "    Failed to installed wiringpi."
+    end
+fi
+pip install wiringpi wiringpi2
+#####
+
 ###################################
 # install Django #
 ###################################
