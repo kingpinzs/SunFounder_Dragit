@@ -96,6 +96,7 @@ class BMP280:
 	_BUS_0_TYPES = ['Pi 1 Model B']
 	_BUS_1_TYPES = ['Pi 3 Model B',
 					'Pi 3 Model B',
+					'Pi 4 Model B',
 					'Pi 2 Model B',
 					'Pi2 Model B',
 					'Model B+']

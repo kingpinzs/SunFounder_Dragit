@@ -23,6 +23,7 @@ class PCF8591(object):
 	RPI_REVISION_1_MODULE_AP = ["0012"]
 	RPI_REVISION_2 = ["a01041", "a21041"]
 	RPI_REVISION_3 = ["a02082", "a22082"]
+	RPI_REVISION_4 = ["a03111", "b03111", "c03111", "c03112"]
 
 	AD_CHANNEL = [0x40, 0x41, 0x42, 0x43]
 
@@ -83,6 +84,8 @@ class PCF8591(object):
 					elif line[11:-1] in self.RPI_REVISION_2:
 						return 1
 					elif line[11:-1] in self.RPI_REVISION_3:
+						return 1
+					elif line[11:-1] in self.RPI_REVISION_4:
 						return 1
 					else:
 						return line[11:-1]
